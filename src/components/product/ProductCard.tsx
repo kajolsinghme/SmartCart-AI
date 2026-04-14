@@ -1,4 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 type Props = {
   product: {
@@ -11,20 +18,34 @@ type Props = {
 
 export default function ProductCard({ product }: Props) {
   return (
-    <div className="border border-gray-300 rounded-lg mt-4 hover:shadow-xl transition overflow-hidden">
-      <Image
-        src={product.image}
-        alt={product.name}
-        width={400}
-        height={300}
-        className="h-72 w-full object-contain rounded-lg"
-      />
-      <h2 className="mt-4 font-semibold text-xl px-4">{product.name}</h2>
-      <p className="text-gray-600 font-bold text-lg px-4">${product.price}</p>
+    <Card className="border border-gray-300 mt-4 hover:shadow-xl transition overflow-hidden">
+      
+      <CardContent className="p-0">
+        <Image
+          src={product.image}
+          alt={product.name}
+          width={400}
+          height={300}
+          className="h-72 w-full object-contain"
+        />
 
-      <button className="mt-4 w-[90%] mx-auto block mb-4 bg-black text-white py-2 cursor-pointer rounded-lg hover:bg-gray-900 transition">
-        View Product
-      </button>
-    </div>
+        <h2 className="mt-4 font-semibold text-xl px-4">
+          {product.name}
+        </h2>
+
+        <p className="text-gray-600 font-bold text-lg px-4">
+          ${product.price}
+        </p>
+      </CardContent>
+
+      <CardFooter className="p-4 pt-0">
+        <Link href={`/product/${product.id}`} className="w-full">
+          <Button className="w-full bg-black text-white py-4 hover:bg-gray-900">
+            View Product
+          </Button>
+        </Link>
+      </CardFooter>
+
+    </Card>
   );
 }

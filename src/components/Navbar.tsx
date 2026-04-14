@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ShoppingCart, User, SearchIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function Navbar() {
   return (
@@ -23,10 +24,10 @@ export default function Navbar() {
         >
           <ShoppingCart className="w-6 h-6" />
         </Link>
-        <button className="flex items-center gap-1 bg-black text-white text-lg px-4 py-2 rounded-lg cursor-pointer hover:bg-gray-900">
+        <Button className="flex items-center gap-1 bg-black text-white text-lg px-4 py-5 cursor-pointer rounded-lg hover:bg-gray-900">
           <User className="w-5 h-5" />
           Login
-        </button>{" "}
+        </Button>
       </div>
     </nav>
   );

@@ -1,9 +1,12 @@
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 export default function Footer() {
   return (
     <footer className="bg-gray-950 border-t">
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
         
+        {/* Brand */}
         <div>
           <h2 className="text-2xl text-white font-bold">SmartCart AI</h2>
           <p className="text-white mt-2">
@@ -11,6 +14,7 @@ export default function Footer() {
           </p>
         </div>
 
+        {/* Shop */}
         <div>
           <h3 className="font-semibold text-white mb-3">Shop</h3>
           <ul className="space-y-2 text-white">
@@ -21,6 +25,7 @@ export default function Footer() {
           </ul>
         </div>
 
+        {/* Company */}
         <div>
           <h3 className="font-semibold text-white mb-3">Company</h3>
           <ul className="space-y-2 text-white">
@@ -36,15 +41,17 @@ export default function Footer() {
           <p className="text-white mb-3">
             Subscribe to get latest offers & updates
           </p>
-          <div className="flex">
-            <input
+
+          <div className="flex gap-2">
+            <Input
               type="email"
               placeholder="Enter email"
-              className="w-full px-3 py-2 border bg-white rounded-l-lg outline-none"
+              className="bg-white text-black"
             />
-            <button className="bg-gray-700 text-white px-4 rounded-r-lg">
+
+            <Button className="bg-gray-700 py-4 px-4 text-white hover:bg-gray-800">
               Subscribe
-            </button>
+            </Button>
           </div>
         </div>
 
@@ -55,4 +62,5 @@ export default function Footer() {
       </div>
     </footer>
   );
+
 }
